@@ -1,0 +1,10 @@
+    /*Memorizar la manera correcta de declarar el useEffect, practicar demasiado en casa este fin de semana y etudiar bien las bases
+    recordar que el unsuscribed lo uso para desmontar el componente una vez que ha cumplido su proposito
+    tambien conoci el useLayoutEffect que tiene el mismo funcionamiento que el useEffect. En este caso determino que el unsuscribed es true entonces
+    uso la funcion getData(). Paso seguido, retorno la negacion de unsuscribed para desmontar el componente. Ahora en la partida de la llamada
+    por parte del metodo fetch, debo tener presente que en este caso la funcion principal esta recibiendo una ID sobre la cual me va a traer todos
+    los datos de los participantes, en este caso usar templete string. Seguido de hacer el llamado, recordar que es una funcion asincrona la de getData
+    debo validar que: el response.ok sea verdadero o en su defecto, uso la negacion del mismo para traer el estado de error y darme cuenta que algo esta fallando
+    seguido, desmoto el ok, message y data del response.json() con un await para esperar que dicha promesa se cumpla.
+    
+    */

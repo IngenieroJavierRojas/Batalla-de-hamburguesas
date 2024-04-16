@@ -1,0 +1,62 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: brown;
+    z-index: 99999999999999;
+    font-family: "Work Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clash2{
+    font-size: 1.1rem;
+    animation: zoom 1.7s ease-in-out infinite alternate;
+    
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+   
+}
+
+}
+
+
+
+.rotacion {
+    animation: zoom 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+

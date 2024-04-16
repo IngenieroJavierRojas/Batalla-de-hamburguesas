@@ -1,0 +1,132 @@
+.digitGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+}
+
+.edit-h2 {
+   
+    text-align: center;
+    font-size: 140%
+    ;
+  
+}
+
+.edit-subtitle {
+    text-align: center;
+    margin-top: 3%;
+    font-size: 90%;
+    margin-bottom: 5%;
+    color: black;
+}
+.edit-numero{
+    font-size: 100%;
+    margin-top: -3%;
+    margin-bottom: 3%;
+    color: black;
+    font-weight: bold;
+}
+.edit-message {
+    text-align: start;
+    font-size: 90%;
+    color: black;
+    text-align: center;
+    margin-bottom: 4%;
+    
+}
+.edit-message-reenviar{
+    color: #803012;
+    font-weight: bold;
+}
+
+.edit-invalid-code {
+    color: red;
+    text-align: center;
+    font-size: 90%;
+}
+
+.digitGroup {
+    display: flex;
+ 
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    }
+    
+    .digitGroup input {
+     outline: 0 !important;
+     user-select: none !important;
+     width:45px;
+     height: 48px;
+     border: 2px solid #F5793B 
+     ;
+     background-color: white;
+     font-weight: bold !important;
+     border-radius: 5px;
+   
+     line-height: 50px;
+     text-align: center;
+     font-size: 24px;
+     color: black;
+     margin: 0;
+    }
+    
+    .digitGroup input:focus {
+     border: 2px solid #803012!important;
+    }
+    
+    .digitGroup input:active {
+     border: 2px solid #803012 !important;
+    }
+    
+    .digitGroup .splitter {
+     padding: 5px 0;
+     color: rgb(0, 0, 0);
+     font-size: 20px;
+     margin: 0;
+    }
+    
+    .prompt {
+     margin-bottom: 20px;
+     font-size: 20px;
+     color: white;
+    }
+    
+    .formSection {
+     max-width: 500px;
+     margin: auto;
+     border-radius: 10px;
+     box-shadow: 0px 0px 8px #ddd;
+   
+    }
+    
+    .w-100 {
+     width: 100%;
+    }
+    
+    /* Media query for mobile devices */
+    @media (max-width: 480px) {
+     .digitGroup {
+      gap: 10px !important;
+     }
+     .digitGroup input {
+      width: 45px !important;
+     }
+     .digitGroup .splitter {
+      font-size: 20px !important;
+    }
+    }
+
+
+
+
+.modiOtp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 30px;
+}
