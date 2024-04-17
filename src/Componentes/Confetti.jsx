@@ -1,15 +1,22 @@
-import { useState } from "react";
-import ReactConfetti from "react-confetti";
-export const Confetti = () => {
-    const [ time, setTime ] = useState(true);
-    const [dimension, setDimension ] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight
-    })
-    const onChangeTime =()=>setTime(false)
+import React, { useState, useEffect } from "react";
+import Confetti from "react-confetti";
+
+export const ConfettiComponent = () => {
+    const [cantConfetti, setCantConfetti] = useState(70);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (cantConfetti > 0) {
+                setCantConfetti(cantConfetti - 40);
+            }
+        }, 1500);
+
+        return () => clearInterval(interval);
+    }, [cantConfetti]);
+
     return (
         <div>
-            {time && <ReactConfetti numberOfPieces={40} />} 
+            <Confetti numberOfPieces={cantConfetti} />
         </div>
     );
 };

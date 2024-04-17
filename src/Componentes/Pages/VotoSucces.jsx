@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Succesfull } from "../Icons";
 import { LoaderContext } from "../LoaderProvider";
 import { CustomButton } from "../CustomButton";
-import { Confetti } from "../Confetti";
+import {  ConfettiComponent } from "../Confetti";
 import { makeStyles } from "@mui/styles";
 export const VotacionSucces = () => {
     const { changeLoading } = useContext(LoaderContext);
@@ -12,7 +12,7 @@ export const VotacionSucces = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerHijo}>
-                <Confetti />
+                <ConfettiComponent/>
 
                 <Succesfull />
                 <h3 className={styles.subtitleVoter}>¡Voto Registrado!</h3>
