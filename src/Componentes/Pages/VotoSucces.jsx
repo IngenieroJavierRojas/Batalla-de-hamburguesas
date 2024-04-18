@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { Succesfull } from "../Icons";
 import { LoaderContext } from "../LoaderProvider";
 import { CustomButton } from "../CustomButton";
-import {  ConfettiComponent } from "../Confetti";
+import { ConfettiComponent } from "../Confetti";
 import { makeStyles } from "@mui/styles";
+import 'animate.css'
 export const VotacionSucces = () => {
     const { changeLoading } = useContext(LoaderContext);
     const styles = useStyles();
@@ -12,7 +13,7 @@ export const VotacionSucces = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerHijo}>
-                <ConfettiComponent/>
+                <ConfettiComponent />
 
                 <Succesfull />
                 <h3 className={styles.subtitleVoter}>¡Voto Registrado!</h3>
@@ -45,8 +46,8 @@ const useStyles = makeStyles({
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        backgroundImage:'url(../Imagenes/fondo.jpg)',
-        padding:'30px 0px'
+        backgroundImage: "url(../Imagenes/fondo.jpg)",
+        padding: "30px 0px",
     },
     containerHijo: {
         display: "flex",
@@ -57,11 +58,11 @@ const useStyles = makeStyles({
         margin: "auto",
         minWidth: "390px",
         maxWidth: "390px",
-        background: 'white',
-        height:'100%',
-        borderRadius:'30px'
-    
-      
+        background: "white",
+        height: "100%",
+        borderRadius: "30px",
+        animation: "bounceIn",
+        animationDuration: "1s",
     },
     subtitleVoter: {
         fontSize: "26px",

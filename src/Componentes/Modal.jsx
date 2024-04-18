@@ -22,6 +22,7 @@ export const ModalProvider = ({ children }) => {
     return (
         <ModalContext.Provider value={{ openModal, closeModal, changeLoading }}>
             {children}
+         
             <Modal
                 open={open}
                 aria-labelledby="modal-modal-title"
@@ -44,6 +45,7 @@ export const ModalProvider = ({ children }) => {
                     <span className={styles.btnCerrar} onClick={closeModal}>
                         <Cerrar />
                     </span>
+                    
                     {content}
                 </Box>
             </Modal>

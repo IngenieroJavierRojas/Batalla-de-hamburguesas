@@ -3,8 +3,10 @@ import { Aviso } from "../Icons";
 import { CustomButton } from "../CustomButton";
 import { ModalContext } from "../Modal";
 import { makeStyles } from "@mui/styles";
+import { LoaderContext } from "../LoaderProvider";
 export const VotoIncorrecto = () => {
     const {closeModal} = useContext(ModalContext);
+    const { changeLoading } = useContext( LoaderContext );
     const styles = useStyles ();
         return (
         <div className={styles.container} >

@@ -3,6 +3,7 @@ import { LoaderContext } from '../LoaderProvider'
 import { makeStyles } from '@mui/styles';
 import fondo2 from '../../../Imagenes/fondo2.png'
 import { ConfettiComponent } from '../Confetti';
+import 'animate.css'
 export const Recepcion = () => {
     const { changeLoading } = useContext( LoaderContext )
     changeLoading( false );
@@ -20,15 +21,15 @@ export const Recepcion = () => {
 }
 
 const useStyles = makeStyles({
-    container :{
+    container: {
         backgroundColor: "#ffffff",
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        backgroundImage:'url(../Imagenes/fondo.jpg)',
-        padding:'20px 0px'
+        backgroundImage: "url(../Imagenes/fondo.jpg)",
+        padding: "20px 0px",
     },
-    containerHijo : {
+    containerHijo: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -37,22 +38,27 @@ const useStyles = makeStyles({
         margin: "auto",
         minWidth: "390px",
         maxWidth: "390px",
-        background: 'white',
-        height:'100%',
-        borderRadius:'30px'
+        background: "white",
+        height: "100%",
+        borderRadius: "30px",
+        animation: "fadeInRightBig",
+        animationDuration: "1.4s",
     },
-    text : {
-        position: 'absolute',
-        textAlign:' center',
-        marginTop:'150px',
-        color: 'white',
-        fontSize:'25px'
+    text: {
+        position: "absolute",
+        textAlign: " center",
+        marginTop: "150px",
+        color: "white",
+        fontSize: "25px",
     },
-    textAlter :{
-        position: 'absolute',
-        textAlign:' center',
-        marginTop:'200px',
-        color: '#F1EEED',
-        fontSize:'20px'
-    }
-})
+    textAlter: {
+        position: "absolute",
+        textAlign: " center",
+        marginTop: "200px",
+        color: "#F1EEED",
+        fontSize: "20px",
+    },
+});
+
+// animate__tada;
+// animate__backInRight;

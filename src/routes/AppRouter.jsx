@@ -4,6 +4,7 @@ import { VotacionSucces } from "../Componentes/Pages/VotoSucces";
 import { AlertNoInternet } from "../Componentes/AlertNoInternet";
 import { Inicio } from "../Componentes/Pages/Inicio";
 import { Recepcion } from "../Componentes/Pages/Recepcion";
+import { ErrorServer } from "../Componentes/Pages/ErrorServer";
 
 const AppRouter = () => {
     return (
@@ -12,6 +13,7 @@ const AppRouter = () => {
             <Route path="/thanks" element={<VotacionSucces />} />
             <Route path="/failed" element={<AlertNoInternet />} />
             <Route path="/*" element={<Recepcion />}/>
+            <Route path="/error" element={ <ErrorServer/> }/>
         </Routes>
     );
 };
