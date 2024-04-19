@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { LoaderContext } from '../LoaderProvider';
 import { makeStyles } from '@mui/styles';
-import { infoError } from '../Icons';
+import { Info } from '../Icons';
 
 export const ErrorServer = () => {
     const { changeLoading } = useContext (LoaderContext);
@@ -12,11 +12,19 @@ export const ErrorServer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerHijo}>
-                <infoError />
+               <Info/>
+               <div className={styles.textDiv}>
+                <h3>
+                    ¡ Lo sentimos !
+                </h3>
+                <p> El participante que buscas no se encuentra en el evento </p>
+               </div>
             </div>
         </div>
     );
 }
+
+
 const useStyles = makeStyles({
         container: {
         backgroundColor: "#ffffff",
@@ -41,5 +49,10 @@ const useStyles = makeStyles({
         animation: "bounceIn",
         animationDuration: "1s",
     },
+    textDiv : {
+        textAlign: 'center',
+        textDecoration:'none',
+        padding:'20px 40px'
+    }
 })
 

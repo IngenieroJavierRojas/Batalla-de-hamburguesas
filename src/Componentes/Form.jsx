@@ -8,7 +8,7 @@ import { Imagen } from "./Imagen";
 import { CustomButton } from "./CustomButton";
 import { makeStyles } from "@mui/styles";
 import { useValidateForm } from "../CustomHooks/useValidateForm";
-
+import 'animate.css'
 export const Form = (props) => {
     const { participant: data2 } = useParticipant();
     const [ stars, setStars ] = useState(1)
@@ -151,14 +151,16 @@ const useStyles = makeStyles({
         minWidth: "390px",
         maxWidth: "390px",
         height: "100vh",
-        margin:'auto',
-        overflowY:'auto',
+        margin: "auto",
+        overflowY: "auto",
         overflowX: "hidden",
         display: "flex",
         flexFlow: "column noWrap",
         alignItems: "center",
         gap: "5px 0px",
-        borderRadius:'20px',
+        borderRadius: "20px",
+        animation: "fadeInRightBig",
+        animationDuration: "1s",
     },
     title: {
         color: "black",
@@ -171,12 +173,11 @@ const useStyles = makeStyles({
     },
     formEdit: {
         gap: "10px",
-        display:'flex',
-        flexDirection:'column',
-        justifyContent:'center',
-        alignItems:'center',
-        textAlign:'center',
-        padding:'10px',
-
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: "10px",
     },
 });

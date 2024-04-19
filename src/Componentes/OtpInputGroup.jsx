@@ -106,7 +106,7 @@ export const OtpInputGroup = ({ data }) => {
                     title: "¡Cuidado!",
                     text: "El codigo ingresado no es correcto.",
                 });
-                navigate(`/participant/:id`);
+                navigate(`/failed`);
             }, 500);
         }
     };

@@ -47,7 +47,7 @@ const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         backgroundImage: "url(../Imagenes/fondo.jpg)",
-        padding: "30px 0px",
+        padding: "20px 0px",
     },
     containerHijo: {
         display: "flex",
@@ -62,7 +62,10 @@ const useStyles = makeStyles({
         height: "100%",
         borderRadius: "30px",
         animation: "bounceIn",
-        animationDuration: "1s",
+        animationDuration: "0.4s",
+       
+        
+        
     },
     subtitleVoter: {
         fontSize: "26px",

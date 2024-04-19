@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Aviso } from "../Icons";
 import { CustomButton } from "../CustomButton";
-import { ModalContext } from "../Modal";
 import { makeStyles } from "@mui/styles";
 import { LoaderContext } from "../LoaderProvider";
 export const VotoIncorrecto = () => {
-    const {closeModal} = useContext(ModalContext);
     const { changeLoading } = useContext( LoaderContext );
     const styles = useStyles ();
+    changeLoading(false)
+  
         return (
         <div className={styles.container} >
             <div className={styles.containerHijo}>
@@ -20,7 +20,7 @@ export const VotoIncorrecto = () => {
                         No te preocupes, ¡Todos cometemos errores! Elige otro
                         participante para votar
                     </p>
-                    <CustomButton name={'Regresar'} action={closeModal} enable={false}/>
+                
             </div>
         </div>
     );
