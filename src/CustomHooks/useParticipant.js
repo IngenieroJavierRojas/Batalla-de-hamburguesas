@@ -2,14 +2,12 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import { LoaderContext } from "../Componentes/LoaderProvider";
 import { useFetch } from "./useFetch";
 import { useParams } from "react-router-dom";
-import { ModalContext } from "../Componentes/Modal";
 
 export const useParticipant = () => {
-    
     const [participant, setParticipant] = useState(null);
     const { changeLoading } = useContext(LoaderContext);
-    const { openModal } = useContext(ModalContext);
     const { id } = useParams();
+     const [error, seterror] = useState(null);
 
     const respuesta = useFetch();
 
@@ -30,6 +28,53 @@ export const useParticipant = () => {
         setParticipant( data );
     }, [id]);
 
+
+    const handleClick = async () => {
+        const payload = { ...data, otp: Object.values(inputValues).join("") };
+        console.log(payload);
+        const { ok, message } = await respuesta(
+            "http://192.168.1.120:5000/api/otp/verify-otp",
+            {
+                method: "POST",
+                body: JSON.stringify(payload),
+            }
+        );
+
+        const [voter, participant] = await Promise.all([
+            registerVoter(payload),
+            updateParticipant(payload),
+        ]);
+        if (!voter?.ok || !participant?.ok) {
+            console.log(voter?.message);
+            console.log(participant?.message);
+
+            return;
+        }
+
+        seterror(message);
+
+        setEnabledBtn(false);
+
+        changeLoading(true);
+        if (ok) {
+            setTimeout(() => {
+                changeLoading(false);
+                closeModal();
+                navigate("/thanks");
+            }, 500);
+        } else {
+            setTimeout(() => {
+                changeLoading(false);
+                Swal.fire({
+                    icon: "error",
+                    title: "¡Cuidado!",
+                    text: "El codigo ingresado no es correcto.",
+                });
+                // openModal(<VotoIncorrecto/>)
+            }, 500);
+        }
+    };
+
     const updateParticipant = async (params) => {
         try {
             const { participante_id, estrellas } = params;
@@ -49,5 +94,6 @@ export const useParticipant = () => {
     return {
         participant,
         updateParticipant,
+        handleClick
     };
 };

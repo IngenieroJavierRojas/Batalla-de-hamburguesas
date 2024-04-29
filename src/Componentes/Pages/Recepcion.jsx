@@ -41,7 +41,7 @@ const useStyles = makeStyles({
         background: "white",
         height: "100%",
         borderRadius: "30px",
-        animation: "fadeInRightBig",
+        animation: "fadeIn",
         animationDuration: "1.4s",
     },
     text: {

@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import { Cerrar } from "./Icons";
 import { makeStyles } from "@mui/styles";
 import { LoaderModal } from "./Loader";
-import 'animate.css'
+import "animate.css";
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
@@ -21,16 +21,14 @@ export const ModalProvider = ({ children }) => {
 
     return (
         <ModalContext.Provider value={{ openModal, closeModal, changeLoading }}>
-          
             {children}
-
 
             <Modal
                 open={open}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 style={{
-                    backdropFilter:'blur(5px)'
+                    backdropFilter: "blur(5px)",
                 }}
             >
                 <Box
@@ -40,17 +38,16 @@ export const ModalProvider = ({ children }) => {
                         left: "50%",
                         transform: "translate(-50%, -50%)",
                         bgcolor: "background.paper",
-                        borderRadius:'20px',
+                        borderRadius: "20px",
                         minWidth: "390px",
                         maxWidth: "390px",
-                        
                     }}
                 >
                     {isLoading && <LoaderModal />}
                     <span className={styles.btnCerrar} onClick={closeModal}>
                         <Cerrar />
                     </span>
-                    
+
                     {content}
                 </Box>
             </Modal>

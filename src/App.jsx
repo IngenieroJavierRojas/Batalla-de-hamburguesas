@@ -5,7 +5,6 @@ import AppRouter from "./routes/AppRouter";
 
 import { LoaderProvider } from "./Componentes/LoaderProvider";
 
-//28VK72TJLL7R121H6SE337VC
 function App() {
     return (
       

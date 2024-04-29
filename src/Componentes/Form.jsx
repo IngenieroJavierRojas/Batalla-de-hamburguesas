@@ -8,19 +8,23 @@ import { Imagen } from "./Imagen";
 import { CustomButton } from "./CustomButton";
 import { makeStyles } from "@mui/styles";
 import { useValidateForm } from "../CustomHooks/useValidateForm";
-import 'animate.css'
-export const Form = (props) => {
+import "animate.css";
+import { ModalContext } from "./Modal";
+import { useContext } from "react";
+export const Form = () => {
     const { participant: data2 } = useParticipant();
-    const [ stars, setStars ] = useState(1)
+    const [stars, setStars] = useState(1);
+    const {changeLoading} = useContext(ModalContext);
 
     const styles = useStyles();
-    const {onSubmit} = useValidateForm(stars);
+    const { onSubmit } = useValidateForm(stars);
     const {
         register,
         control,
         handleSubmit,
         formState: { errors },
     } = useForm();
+    changeLoading(false)
 
     useEffect(() => {
         FuncionSubModal();
@@ -34,8 +38,6 @@ export const Form = (props) => {
             text: "Ingresa correctamente los datos.",
         });
     };
-
-
 
     return (
         <div className={styles.main}>
@@ -116,10 +118,7 @@ export const Form = (props) => {
 
                 <span c>
                     Al continuar,{" "}
-                    <a
-                       
-                        href="https://www.camaracartago.org/politica-de-tratamiento-de-datos-personales/"
-                    >
+                    <a href="https://www.camaracartago.org/politica-de-tratamiento-de-datos-personales/">
                         acepta nuestra política de protección y tratamiento de
                         datos personales.
                     </a>
